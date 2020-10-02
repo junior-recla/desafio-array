@@ -10,16 +10,10 @@ package util;
  * @author Carlos
  * @param <Tipo>
  */
-public class VetorLimitado<Tipo> implements InterfaceVetor<Tipo> {
-
-    private final int tamanhoTotal;
-    private int tamanhoAtual;
-    private Object[] vetorDados;
+public class VetorLimitado<Tipo> extends AbstractVetor<Tipo> {
 
     public VetorLimitado(int tamanho) {
-        this.tamanhoAtual = 0;
-        this.tamanhoTotal = tamanho;
-        this.vetorDados = new Object[tamanho];
+        super(tamanho);
     }
 
     @Override
@@ -37,44 +31,5 @@ public class VetorLimitado<Tipo> implements InterfaceVetor<Tipo> {
             }//for
         }//if
     }//add
-
-    @Override
-    public void imprime() {
-        for (Object dado : this.vetorDados) {
-            if (dado != null) {
-                System.out.print(dado + ", ");
-            }
-        }
-    }
-
-    @Override
-    public Tipo remove(int index) {
-        Tipo aux = null;
-        if (index >= 0 && index < this.tamanhoTotal()) {
-            aux = (Tipo) this.vetorDados[index];
-            this.vetorDados[index] = null;
-            this.tamanhoAtual--;
-        }
-        return aux;
-    }
-
-    @Override
-    public Tipo getElemento(int index) {
-        Tipo aux = null;
-        if (index >= 0 && index < this.tamanhoTotal()) {
-            aux = (Tipo) this.vetorDados[index];
-        }
-        return aux;
-    }
-
-    @Override
-    public int tamanhoTotal() {
-        return this.tamanhoTotal;
-    }
-
-    @Override
-    public int tamanhoAtual() {
-        return this.tamanhoAtual;
-    }
 
 }
