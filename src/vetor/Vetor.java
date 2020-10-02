@@ -18,8 +18,8 @@ public class Vetor {
      */
     public static void main(String[] args) {
 //        AbstractVetor<String> vetor = new VetorDobra(4);
-        AbstractVetor<String> vetor = new VetorMetade(4);
-//        AbstractVetor<String> vetor = new VetorLimitado(4);
+//        AbstractVetor<String> vetor = new VetorMetade(4);
+        AbstractVetor<String> vetor = new VetorLimitado(4);
         vetor.add("primeiro");
         vetor.add("segundo");
         vetor.add("terceiro");

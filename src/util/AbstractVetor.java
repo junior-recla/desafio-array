@@ -38,7 +38,17 @@ public abstract class AbstractVetor<Tipo> {
         return this.tamanhoAtual;
     }
 
-    public abstract void add(Tipo elemento);
+    public void add(Tipo elemento){
+        if (elemento != null) {
+            for (int i = 0; i < this.tamanhoTotal(); i++) {
+                if (this.vetorDados[i] == null) {
+                    this.vetorDados[i] = elemento;
+                    this.tamanhoAtual++;
+                    break;
+                }
+            }
+        }
+    }
 
     /*
     não performatico, para melhorar a performace teria

@@ -16,20 +16,4 @@ public class VetorLimitado<Tipo> extends AbstractVetor<Tipo> {
         super(tamanho);
     }
 
-    @Override
-    public void add(Tipo elemento) {
-        if (elemento != null || this.tamanhoTotal() < this.tamanhoTotal()) {
-
-            for (int i = 0; i < this.tamanhoTotal(); i++) {
-                if (this.vetorDados[i] == null) {
-                    this.vetorDados[i] = elemento;
-                    this.tamanhoAtual++;
-
-                    return;
-
-                }//if
-            }//for
-        }//if
-    }//add
-
 }

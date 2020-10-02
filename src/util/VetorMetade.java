@@ -18,20 +18,11 @@ public class VetorMetade<Tipo> extends AbstractVetor<Tipo> {
 
     @Override
     public void add(Tipo elemento) {
-        if (elemento != null) {
-
-            for (int i = 0; i < this.tamanhoTotal(); i++) {
-                if (this.vetorDados[i] == null) {
-                    this.vetorDados[i] = elemento;
-                    this.tamanhoAtual++;
-                    if (this.tamanhoAtual() < this.tamanhoTotal()) {
-                        return;
-                    }//if
-                }//if
-            }//for
+        super.add(elemento);
+        if (this.tamanhoAtual() == this.tamanhoTotal()){
             dobra( (int) (this.tamanhoTotal * 1.5)  );
-            //dobra(  this.tamanhoTotal + (this.tamanhoTotal / 2)  );
-        }//if
-    }//add
+        }
+        
+    }
 
 }
